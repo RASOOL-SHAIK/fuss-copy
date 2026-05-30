@@ -1,3 +1,5 @@
+import 'package:audioplayers/audioplayers.dart';
+
 class SoundService {
   static bool isEnabled = true;
 
@@ -5,15 +7,24 @@ class SoundService {
     isEnabled = enabled;
   }
 
-  static Future<void> init() async {
-    // No-op
-  }
-
+  // No init needed, we'll create fresh players each time
   static Future<void> playCorrect() async {
-    // No-op
+    if (!isEnabled) return;
+    try {
+      final player = AudioPlayer();
+      await player.play(AssetSource('sounds/correct.mp3'));
+    } catch (e) {
+      print('Error playing correct: $e');
+    }
   }
 
   static Future<void> playWrong() async {
-    // No-op
+    if (!isEnabled) return;
+    try {
+      final player = AudioPlayer();
+      await player.play(AssetSource('sounds/wrong.mp3'));
+    } catch (e) {
+      print('Error playing wrong: $e');
+    }
   }
 }
