@@ -1,5 +1,5 @@
-name: clean_quiz_app
-description: A Flutter quiz app with timer, leaderboard, and sound.
+name: fuss_copy
+description: A Flutter quiz app.
 publish_to: 'none'
 version: 1.0.0+1
 
@@ -12,7 +12,6 @@ dependencies:
   cupertino_icons: ^1.0.6
   hive: ^2.2.3
   hive_flutter: ^1.1.0
-  audioplayers: ^6.7.0
   path_provider: ^2.1.1
 
 dev_dependencies:
@@ -24,5 +23,6 @@ flutter:
   uses-material-design: true
   assets:
     - assets/questions.json
-    - assets/sounds/correct.mp3
-    - assets/sounds/wrong.mp3
+    # Sound assets removed – comment out or delete
+    # - assets/sounds/correct.mp3
+    # - assets/sounds/wrong.mp3

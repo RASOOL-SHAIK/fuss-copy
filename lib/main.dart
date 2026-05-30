@@ -9,7 +9,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Hive.initFlutter();
   await HiveService.init();
-  await SoundService.init(); // Preload sounds
+  await SoundService.init(); // No-op, safe to call
   runApp(const QuizApp());
 }
 
